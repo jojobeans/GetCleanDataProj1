@@ -92,10 +92,18 @@ The belwo variables #3 to #68 are described together at the end of the document.
 	These variables are the mean measurement for a given activity and subject, based on the raw data from UCI HAR dataset.
 
 	The format for the variables names are standardized by the following way:
-	first letter: t or f describes data in either time (t) or frequency (f) domain.
-	second word: Body (or BodyBody) or Gravity describes separation of acceleration by either the body (Body) or gravity (Gravity)
-	Third word: Acc or Gyro describes whether the signal is from the accelerometer (Acc) or gyroscope (Gyro) from the smartphone
-	Fourth word (optional): Jerk describes further signals describing jerk signals derived from linear acceleration and angulary velocity (Jerk)
-	Fifth word (optional): Mag describes the total magnitude (not X, Y, Z components) of each signal
-	Sixth word: Mean or Std describes whether the mean of this dataset is taken from the mean (Mean) or standard deviation (Std) of the original UCI HAR dataset.
-	Seventh word (optional): X, Y, Z describes which axis of measurement. Any measurement without X, Y or Z should have a magnitude (Mag) associated instead.
+	* First letter: t or f describes data in either time (t) or frequency (f) domain.
+	* second word: Body (or BodyBody) or Gravity describes separation of acceleration
+	by either the body (Body) or gravity (Gravity)
+	* Third word: Acc or Gyro describes whether the signal is from the accelerometer
+	(Acc) or gyroscope (Gyro) from the smartphone
+	* Fourth word (optional): Jerk describes further signals describing jerk signals
+	derived from linear acceleration and angulary velocity (Jerk)
+	* Fifth word (optional): Mag describes the total magnitude
+	(not X, Y, Z components) of each signal
+	* Sixth word: Mean or Std describes whether the mean of this dataset is taken
+	from the mean (Mean) or standard deviation (Std) of the original UCI HAR dataset.
+	* Seventh word (optional): X, Y, Z describes which axis of measurement.
+	Any measurement without X, Y or Z should have a magnitude (Mag) associated instead.
+
+	* Truthfully, the units of these variables are unknown as the raw data comes from the UCI HAR Dataset and it's not specified there.
