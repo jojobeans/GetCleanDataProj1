@@ -26,39 +26,46 @@ Below gives more details for each of the steps outlined in the project descripti
  
 ###1. MERGE DATA
 The raw data used is saved in two folders "./UCI HAR Dataset/test" and "./UCI HAR Dataset/train".
+
 The test folder has three text files, labeled: "subject_test.txt", "X_test.txt", "y_test.txt"
+
 The train folder has three text files, labeled: "subject_train.txt", "X_train.txt", "y_train.txt"
 
 Initial data is read into files.
 For each test and training sessions, the three files are merged using cbind() function.
 The "./UCI HAR Dataset/test/X_test.txt" and "./UCI HAR Dataset/train/X_train.txt" files are renamed with the variable names from the "./UCI HAR Dataset/features.txt" file
+
 We label the names of "./UCI HAR Dataset/test/subject_test.txt" and "./UCI HAR Dataset/train/subject_train.txt" with "subject"
+
 We label the names of "./UCI HAR Dataset/test/y_test.txt" and "./UCI HAR Dataset/train/y_train.txt" with "activity"
 
 Then the test and train data are merged using the rbind() function.
 Here, we assume that the same subject ids in the test and training sessions correspond to the same person.
 
 ###2. SELECT DATA
+We need to remove duplicate columns/variables.
+
+As only the mean and standard deviation measurements are required for the final tidy dataset, we only take the columns with variable names including mean() and std().
+ 
+Here, we assume that the meanFreq() is not used in the tidy dataset.
+ 
+###3. RENAME DATA WITH DESCRIPTIVE LABEL
+The activity column contains numeric values corresponding to one of six activities.
+Here, we replace the numeric value with the string, with the mapping found in "./UCI HAR Dataset/activity_labels.txt"
+
+###4. LABEL VARIABLES
+The variable names from the raw dataset are changed in this section.
+We use a free tidy data principles, namely removing non-alphanumeric characters: "()" and "-"
+Then the variable names capitalize each new word for slightly easier reading.
+
+###5. CREATE FINAL TIDY DATASET
+The final tidy dataset requirement is to group the data by activity and subject.
+Then take the mean of each variable.
+
+We use the ddply function in order to this. The final tidy dataset is written to a file and uploaded to the Github repo.
  
 ##Description of the variables in the finaltinydata.txt file
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
- 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
- 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
- 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
- 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
- 
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
+The finaltidydata.txt file has the follwowing attributes:
+ - Dimensions of the dataset: 180 rows (30 subjects x 6 activities) and 68 variables (those with mean() and std() from raw data as well as one variable for activity, one for subject)
+ - Variables present in the dataset: Variables are desribed in the CodeBook.txt. There is one variable for the activity, one for subject and the remaining 66 for the mean of each variable
  
