@@ -1,0 +1,101 @@
+TIDY DATA SET found in output file "finaltidydata.txt"
+
+SOURCE OF DATA
+Based on raw data found in "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones"	   
+This codebook is based on UCI HAR Dataset and description within their codebook described in "features_info.txt"
+
+DATA DICTIONARY FOR finaltidydata.txt
+
+1. activity	   
+	describes activity based on UCI HAR Dataset file "activity_labels.txt"	
+	WALKING
+	WALKING_UPSTAIRS
+	WALKING_DOWNSTAIRS
+	SITTING
+	STANDING
+	LAYING
+
+2. subject
+	describes person undergoing measurement (identified by number)
+	variables values are integers from 1 to 30 that indicate individual subjects.
+
+The belwo variables #3 to #68 are described together at the end of the document.
+
+3. tBodyAccMeanX	   
+4. tBodyAccMeanY	   
+5. tBodyAccMeanZ	   
+6. tGravityAccMeanX	   
+7. tGravityAccMeanY	   
+8. tGravityAccMeanZ	   
+9. tBodyAccJerkMeanX	   
+10. tBodyAccJerkMeanY	   
+11. tBodyAccJerkMeanZ	   
+12. tBodyGyroMeanX	   
+13. tBodyGyroMeanY	   
+14. tBodyGyroMeanZ	   
+15. tBodyGyroJerkMeanX	   
+16. tBodyGyroJerkMeanY	   
+17. tBodyGyroJerkMeanZ	   
+18. tBodyAccMagMean	   
+19. tGravityAccMagMean	   
+20. tBodyAccJerkMagMean	   
+21. tBodyGyroMagMean	   
+22. tBodyGyroJerkMagMean	   
+23. fBodyAccMeanX	   
+24. fBodyAccMeanY	   
+25. fBodyAccMeanZ	   
+26. fBodyAccJerkMeanX	   
+27. fBodyAccJerkMeanY	   
+28. fBodyAccJerkMeanZ	   
+29. fBodyGyroMeanX	  
+30. fBodyGyroMeanY	   
+31. fBodyGyroMeanZ	   
+32. fBodyAccMagMean	   
+33. fBodyBodyAccJerkMagMean	   
+34. fBodyBodyGyroMagMean	   
+35. fBodyBodyGyroJerkMagMean	   
+36. tBodyAccStdX	   
+37. tBodyAccStdY	   
+38. tBodyAccStdZ	   
+39. tGravityAccStdX	   
+40. tGravityAccStdY	   
+41. tGravityAccStdZ	   
+42. tBodyAccJerkStdX	   
+43. tBodyAccJerkStdY	   
+44. tBodyAccJerkStdZ	   
+45. tBodyGyroStdX	   
+46. tBodyGyroStdY	   
+47. tBodyGyroStdZ	   
+48. tBodyGyroJerkStdX	   
+49. tBodyGyroJerkStdY	   
+50. tBodyGyroJerkStdZ	   
+51. tBodyAccMagStd	   
+52. tGravityAccMagStd	   
+53. tBodyAccJerkMagStd	   
+54. tBodyGyroMagStd	   
+55. tBodyGyroJerkMagStd	   
+56. fBodyAccStdX	   
+57. fBodyAccStdY	   
+58. fBodyAccStdZ	   
+59. fBodyAccJerkStdX	   
+60. fBodyAccJerkStdY	   
+61. fBodyAccJerkStdZ	   
+62. fBodyGyroStdX	   
+63. fBodyGyroStdY	   
+64. fBodyGyroStdZ   
+65. fBodyAccMagStd	   
+66. fBodyBodyAccJerkMagStd	   
+67. fBodyBodyGyroMagStd	   
+68. fBodyBodyGyroJerkMagStd	 
+
+	The above variables #3 to #68 are all derived from smartphone accelerometer or gyroscope signals, related to time domain signals in X, Y, Z directions
+	These variables are the mean measurement for a given activity and subject, based on the raw data from UCI HAR dataset.
+
+	The format for the variables names are standardized by the following way:
+	first letter: t or f describes data in either time (t) or frequency (f) domain.
+	second word: Body (or BodyBody) or Gravity describes separation of acceleration by either the body (Body) or gravity (Gravity)
+	Third word: Acc or Gyro describes whether the signal is from the accelerometer (Acc) or gyroscope (Gyro) from the smartphone
+	Fourth word (optional): Jerk describes further signals describing jerk signals derived from linear acceleration and angulary velocity (Jerk)
+	Fifth word (optional): Mag describes the total magnitude (not X, Y, Z components) of each signal
+	Sixth word: Mean or Std describes whether the mean of this dataset is taken from the mean (Mean) or standard deviation (Std) of the original UCI HAR dataset.
+	Seventh word (optional): X, Y, Z describes which axis of measurement. Any measurement without X, Y or Z should have a magnitude (Mag) associated instead.
